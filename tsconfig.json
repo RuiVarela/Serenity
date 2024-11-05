@@ -1,0 +1,13 @@
+{
+    "include": [
+        "src/**/*"
+    ],
+    "compilerOptions": {
+        "allowImportingTsExtensions": true,
+        "noEmit": true,
+
+        "module": "es2022",
+        "target": "es2022",
+        "strict": true
+    }
+}

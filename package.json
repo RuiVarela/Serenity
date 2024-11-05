@@ -1,0 +1,19 @@
+{
+    "name": "virtual-world",
+    "source": [
+        "src/index.html"
+    ],
+    "scripts": {
+        "start": "parcel --no-cache",
+        "start_secure": "parcel --no-cache --https",
+        "build_dist": "parcel build --no-source-maps --no-cache",
+        "build_clean": "rm -rf dist",
+        "build": "npm run build_clean && npm run build_dist",
+        "check": "tsc --noEmit"
+    },
+    "devDependencies": {
+        "@parcel/validator-typescript": "^2.12.0",
+        "parcel": "^2.11.0",
+        "typescript": "^5.5.3"
+    }
+}

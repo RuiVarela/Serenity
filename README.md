@@ -4,6 +4,8 @@ This is a project that I made to relax and have fun. It should also be helpful f
 It's a world where you can interact and create beautiful patterns with different colors and shapes.
 If you just want to watch, you can also do that. Just sit back and relax. autopilot will take care of the rest.
 
+[preview_00.webm](https://github.com/user-attachments/assets/2779a7f2-aa4f-45d2-810b-61df4b5d0bab)
+
 # Implemented Scenes
 - Marbling
 - Friendly Animal

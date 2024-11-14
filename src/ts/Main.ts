@@ -16,6 +16,30 @@ import { DragonCurveScene } from './scenes/DragonCurveScene';
 import { SpaceshipScene } from './scenes/SpaceshipScene';
 import { RayCastingScene } from './scenes/RayCastingScene';
 
+//
+// prevent magnification on double tap on webkit mobile
+// https://discourse.threejs.org/t/iphone-how-to-remove-text-selection-magnifier/47812/12
+//
+function createDoubleTapPreventer(timeout_ms: number) {
+    let dblTapTimer = 0;
+    let dblTapPressed = false;
+
+    return function (e: TouchEvent) {
+        clearTimeout(dblTapTimer);
+        if (dblTapPressed) {
+            e.preventDefault();
+            dblTapPressed = false;
+        } else {
+            dblTapPressed = true;
+            dblTapTimer = setTimeout(() => {
+                dblTapPressed = false;
+            }, timeout_ms);
+        }
+    };
+}
+document.body.addEventListener("touchstart", createDoubleTapPreventer(500), { passive: false });
+
+
 const canvas = document.getElementById('canvas') as HTMLCanvasElement | null;
 if (canvas == null) throw new Error("Canvas not found");
 
